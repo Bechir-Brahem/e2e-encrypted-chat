@@ -1,7 +1,11 @@
+import os
+
 from ldap.ldapobject import LDAPObject
 
 
 class ServerVars:
+    certificates ={}
+    path=os.path.dirname(__file__)
     HOST = "localhost"
     PORT = 42069
     sockets = {}

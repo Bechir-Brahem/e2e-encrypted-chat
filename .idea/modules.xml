@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../distributed-ml/.idea/distributed-ml.iml" filepath="$PROJECT_DIR$/../distributed-ml/.idea/distributed-ml.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/e2e-encrypted-chat.iml" filepath="$PROJECT_DIR$/.idea/e2e-encrypted-chat.iml" />
     </modules>
   </component>
