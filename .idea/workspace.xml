@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62c5a92a-21a6-4c21-aaa1-54b23d71cd4c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/services/SignCSRService.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/e2e-encrypted-chat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/e2e-encrypted-chat.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/assets/bg.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/assets/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/assets/signup.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/pcconfig.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/web_app/AuthView.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/web_app/ChatView.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/web_app/Helpers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/web_app/OnlineUsersView.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/web_app/State.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/web_app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/web_app/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/client_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/web_app/web_app/web_app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/ServerVars.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/ServerVars.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/ActionStrategies.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/ActionStrategies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +25,7 @@
     <setting file="file://$PROJECT_DIR$/server/services/ActionStrategies.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file:///usr/lib/python3.9/logging/__init__.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/server/server.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/server/ServerVars.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/server/services/SignCSRService.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -133,7 +114,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1674214444639</updated>
-      <workItem from="1674214448441" duration="8790000" />
+      <workItem from="1674214448441" duration="9789000" />
     </task>
     <servers />
   </component>

@@ -12,5 +12,6 @@
 ![](architecture.svg)
 
 ### proof of concept
+[youtube link](https://youtu.be/5nD8e4gt9ac)
 ![](poc.gif)
 
