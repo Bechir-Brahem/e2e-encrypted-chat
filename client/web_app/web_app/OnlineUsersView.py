@@ -8,14 +8,18 @@ class OnlineUsersState(State):
     users = ['a', 'v', 'v', 'd']
 
     def click(self, username):
-        pass
+        print('clicked')
+        service = ClientService()
+        service.setClientDistination(username,self.username)
+        return pc.redirect('/chat')
+
     @pc.var
-    def getUsers(self)->list[str]:
-        service=ClientService()
-        result= service.getOnlineUsers()
-        for i,username in enumerate(result):
-            if username==self.username:
-                result[i]+=" (you)"
+    def getUsers(self) -> list[str]:
+        service = ClientService()
+        result = service.getOnlineUsers()
+        for i, username in enumerate(result):
+            if username == self.username:
+                result[i] += " (you)"
         return result
 
 
@@ -36,10 +40,11 @@ def onlineUsers():
                                    bg="green.500",
                                    border_color="green.500",
                                )
-                               ,name=user),
-                           pc.heading(user)
+                               , name=user),
+                           pc.heading(user),
                        )
-                       ,pc.divider()
+                       , pc.divider()
+                       , on_click=lambda: OnlineUsersState.click(user)
                    )
                    ),
 

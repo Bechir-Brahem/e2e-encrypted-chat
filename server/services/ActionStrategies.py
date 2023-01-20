@@ -1,4 +1,7 @@
+import pickle
+
 from server.Helpers import SingletonMeta
+from server.services.ChatService import ChatService
 from server.services.LoginService import LoginService
 from server.services.OnlineUsersService import OnlineUsersService
 from server.services.RegisterService import RegisterService
@@ -7,11 +10,20 @@ from server.services.RegisterService import RegisterService
 class ActionStrategies(metaclass=SingletonMeta):
     @staticmethod
     def handle(conn, request):
+        res=None
+        action=''
         if request['action'] == "login":
-            return LoginService.handle(conn, request['payload']).to_bytes(length=4096, byteorder='little')
+            res= LoginService.handle(conn, request['payload']).to_bytes(length=4096, byteorder='little')
+            action='login'
         elif request['action'] == "register":
-            return RegisterService.handle(conn, request['payload']).to_bytes(length=4096, byteorder='little')
+            res= RegisterService.handle(conn, request['payload']).to_bytes(length=4096, byteorder='little')
+            action='register'
         elif request['action'] == 'online_users':
-            return OnlineUsersService.handle(conn, request['payload'])
+            res= OnlineUsersService.handle(conn, request['payload'])
+            action='online_users'
+        elif request['action'] == 'message':
+            res= ChatService.handle(conn, request['payload'])
+            action='message'
         else:
             raise AttributeError('action unknown')
+        return pickle.dumps({'action':action,'payload':res})
