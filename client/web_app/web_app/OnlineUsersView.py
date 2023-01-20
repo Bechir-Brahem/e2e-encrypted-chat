@@ -1,5 +1,6 @@
 import pynecone as pc
 
+from .ChatView import ChatState
 from .State import State
 from .client import ClientService
 
@@ -10,17 +11,24 @@ class OnlineUsersState(State):
     def click(self, username):
         print('clicked')
         service = ClientService()
-        service.setClientDistination(username,self.username)
+        if username==self.username+' (You)':
+            username=self.username
+        service.setClientDistination(username, self.username)
+        service.enterChat(ChatState.add_message)
         return pc.redirect('/chat')
 
     @pc.var
     def getUsers(self) -> list[str]:
         service = ClientService()
         result = service.getOnlineUsers()
+        shownResults = {}
         for i, username in enumerate(result):
             if username == self.username:
-                result[i] += " (you)"
-        return result
+                shownResults[username] = self.username + ' (You)'
+            else:
+                shownResults[username] = self.username
+
+        return list(shownResults.values())
 
 
 def onlineUsers():

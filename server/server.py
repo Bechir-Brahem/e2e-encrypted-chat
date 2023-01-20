@@ -16,7 +16,8 @@ async def echo(conn: socket, loop: AbstractEventLoop) -> None:
         request = pickle.loads(d)
         from server.services.ActionStrategies import ActionStrategies
         result = ActionStrategies.handle(conn, request)
-        await loop.sock_sendall(conn, result)
+        if result is not None:
+            await loop.sock_sendall(conn, result)
 
 
 async def listen_for_connection(server_socket: socket, loop: AbstractEventLoop):

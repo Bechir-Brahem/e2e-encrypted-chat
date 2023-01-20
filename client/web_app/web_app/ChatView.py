@@ -1,6 +1,7 @@
 import pynecone as pc
 
 from .State import State
+from .client import ClientService
 
 
 class ChatState(State):
@@ -8,10 +9,17 @@ class ChatState(State):
     message: str
 
     def click(self):
-        self.messages=self.messages+list([self.message])
+        print('chatview CLICK')
+        self.messages = self.messages + list([self.message])
+        service=ClientService()
+        service.sendMessage(self.message)
 
     def set_message(self, message):
         self.message = message
+
+    def add_message(self, message):
+        print('IN CALLBACK')
+        self.messages = self.messages + list([message])
 
 
 styles = {
