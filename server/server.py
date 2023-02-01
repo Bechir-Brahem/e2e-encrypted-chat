@@ -34,8 +34,13 @@ class App(metaclass=SingletonMeta):
 
         # connect to the LDAP server
         try:
-            ServerVars.ldap_admin_conn = ldap.initialize('ldap://localhost:10389', trace_level=1)
-            ServerVars.ldap_auth_conn = ldap.initialize('ldap://localhost:10389', trace_level=1)
+            # ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_ALLOW)
+            ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_NEVER)
+
+            ServerVars.ldap_admin_conn = ldap.initialize('ldaps://localhost:10636', trace_level=1)
+
+            ServerVars.ldap_auth_conn = ldap.initialize('ldaps://localhost:10636', trace_level=1)
+
         except ldap.SERVER_DOWN:
             print("Can't contact LDAP server")
             exit(4)
