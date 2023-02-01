@@ -14,11 +14,10 @@ class SignCSRService:
     def handle(conn, payload):
         username = payload['username']
         csr = x509.load_pem_x509_csr(payload['csr'], default_backend())
-
-        print('aa' ,username)
-
+        
         pem_cert = open(os.path.join(ServerVars.path, 'ca.crt'), 'rb').read()
         ca = x509.load_pem_x509_certificate(pem_cert, default_backend())
+        
         pem_key = open(os.path.join(ServerVars.path, 'ca.key'), 'rb').read()
         ca_key = serialization.load_pem_private_key(pem_key, password=None, backend=default_backend())
 

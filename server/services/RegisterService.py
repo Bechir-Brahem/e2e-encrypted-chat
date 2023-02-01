@@ -1,5 +1,6 @@
 import ldap
 from ldap import modlist
+from server.Helpers import decrypt_password
 
 from server.ServerVars import ServerVars
 
@@ -10,14 +11,15 @@ class RegisterService:
         print(payload)
         ldap_conn = ServerVars.ldap_admin_conn
         # result = ldap_conn.search_s(cn, payload['password'])
+        password = decrypt_password(payload['password'])
 
-        # TODO: sanitize user's username
+
         dn = f"cn={payload['username']},ou=users,ou=system"
         attrs = {
             'objectclass': [b'person', b'top'],
             'cn': bytes(payload['username'], 'utf-8'),
             'sn': bytes(payload['username'], 'utf-8'),
-            'userPassword': bytes(payload['password'], 'utf-8')
+            'userPassword': password
         }
 
         # Convert our dict to nice syntax for the add-function using modlist-module

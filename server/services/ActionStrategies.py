@@ -1,4 +1,5 @@
 from server.Helpers import SingletonMeta
+from .GetCaCertificate import GetCaCertificate
 from .ChatService import ChatService
 from .LoginService import LoginService
 from .OnlineUsersService import OnlineUsersService
@@ -17,10 +18,12 @@ class ActionStrategies(metaclass=SingletonMeta):
         elif request['action'] == 'online_users':
             return OnlineUsersService.handle(conn, request['payload'])
         elif request['action'] == 'sign_csr':
-            return SignCSRService.handle(conn,request['payload'])
+            return SignCSRService.handle(conn, request['payload'])
         elif request['action'] == 'req_cert':
             return ServerVars.certificates[request['payload']]
         elif request['action'] == 'message':
             return ChatService.handle(conn, request['payload'])
+        elif request['action'] == 'ca_cert':
+            return GetCaCertificate.handle(conn, request['payload'])
         else:
             raise AttributeError('action unknown')
